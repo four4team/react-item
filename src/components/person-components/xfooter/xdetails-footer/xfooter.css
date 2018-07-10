@@ -1,0 +1,108 @@
+.credit {
+    padding-top: 16px;
+    text-align: center;
+    padding-bottom: 74px;
+    background: #eee;
+}
+.credit .hd {
+    margin-bottom: 22px;
+    color: #999;
+    position: relative;
+    height: 20px;
+    font-size:14px;
+}
+.credit .hd span{
+    margin-left:30px;
+}
+.credit .items {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0 35px;
+}
+.credit .items .credit-item {
+    margin-right: 56px;
+}
+.credit .items .credit-item .credit-icon {
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+}
+.credit .items .credit-item .text {
+    margin-top: 10px;
+    color: #666;
+    font-size: 12px;
+    display: block;
+    line-height: 1;
+    white-space: nowrap;
+}
+.credit .hd:after, .credit .hd:before {
+    display: inline-block;
+    content: "";
+    width: 60px;
+    height: 1px;
+    background-color: #e6e6e6;
+    margin-bottom: 5px;
+}
+.bottom-container {
+	display: flex;
+    position: fixed;
+    height: 49px;
+    width: 100%;
+    bottom: 0;
+    z-index: 9;
+}
+.bottom-container .custom-service {
+    width: 65px;
+    background-color: #fff;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-top: 1px solid #e6e6e6;
+}
+.bottom-container .bottom-btn.presale, .bottom-container .seat-map {
+    background-color: #fd8612;
+}
+.bottom-container .bottom-btn, .bottom-container .seat-map {
+    -webkit-box-flex: 1;
+    flex: 1;
+    font-size: 16px;
+    line-height: 49px;
+    min-width: 110px;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+}
+.bottom-container .custom-service .icon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 2px;
+    background-size: contain;
+    background-image: url(//static.piaoniu.com/nuxt-static/img/custom-service.89c653b.png);
+}
+.bottom-container .custom-service .text {
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    font-size: 11px;
+    color: #666;
+    margin-top:-6px;
+}
+.custom-service .icon {
+	display: inline-block;
+    margin:6px 0 0 50%;
+    transform: translate(-50%);
+}
+.credit .hd:after {
+    margin-left: 30px;
+}
+.credit .items .credit-item:last-child {
+    margin-right: 0;
+}

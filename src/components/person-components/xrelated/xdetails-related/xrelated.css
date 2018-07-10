@@ -1,0 +1,138 @@
+.activity {
+	list-style:none;
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #fff;
+}
+.activity .main-top {
+    min-height: 125px;
+    position: relative;
+    display: block;
+}
+.activity .poster-wrap {
+    position: absolute;
+    left: 0;
+    top: 15px;
+}
+.activity .info {
+    padding-top: 15px;
+    margin-left: 92px;
+    border-bottom: 1px solid hsla(0,0%,90%,.5);
+}
+.video-play {
+	width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: 26px 26px;
+    display: none;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-position: 50% 50%;
+    background-image: url(//static.piaoniu.com/nuxt-static/img/icon-play.29dd962.png);
+}
+.video-play video {
+    width: 0;
+    height: 0;
+}
+.activity .poster-wrap .poster {
+	background-size: cover;
+    background-position: 50%;
+    width: 75px;
+    height: 100px;
+}
+.activity .info .title-line {
+    display: flex;
+}
+.activity .info .time-address {
+    font-size: 12px;
+    color: #999;
+    margin-top: 9px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.activity .info .no-rank, .activity .info .rank {
+    font-size: 10px;
+    color: #999;
+    margin-bottom: 10px;
+}
+.activity .price-wrap {
+    position: relative;
+}
+.activity .promotion-info {
+    margin-bottom: 10px;
+}
+.activity .info .title {
+    font-size: 15px;
+    color: #333;
+    max-height: 44px;
+    line-height: 22px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans;
+    font-weight: 600;
+}
+.activity .activityTag {
+    flex-shrink: 0;
+    max-width: 40px;
+    margin-left: 4px;
+    color: #fff;
+}
+.activity .info .time-address .split {
+    margin: 0 4px;
+}
+.activity .info .no-rank span, .activity .info .rank span {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffb02e;
+}
+.activity .price-wrap .status-text {
+    font-size: 10px;
+    color: #999;
+    width: 45px;
+    line-height: 19px;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+.activity .price-wrap .price {
+    position: relative;
+    top: 1px;
+    color: #ff2661;
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 4px;
+}
+.activity .price-wrap .qi, .activity .price-wrap .unit {
+    font-size: 10px;
+    color: #999;
+}
+.activity .promotion-info li {
+	position:relative;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+.activity .promotion-info .inner-icon {
+	font-size: 10px;
+	position:absolute;
+	left:0;
+	top:4px;
+	color:#efaa35;
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background-size: 100%;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.activity .promotion-info .desc {
+    font-size: 12px;
+    color: #efaa35;
+    margin-left:14px;
+}

@@ -1,0 +1,115 @@
+.detail-pop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+.detail-pop__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+}
+.detail-pop__content, .detail-pop__main {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+}
+.detail-pop__main {
+    position: absolute;
+    width: 100%;
+    height: 65%;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    flex-direction: column;
+}
+.detail-pop__content {
+    -webkit-box-flex: 1;
+    flex: 1;
+    overflow: auto;
+    flex-direction: column;
+}
+.tip-detail {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+.tip-detail__tabs {
+	display: flex;
+    justify-content: space-around;
+    padding-top: 24px;
+    padding-bottom: 34px;
+}
+.tip-detail__tab.active {
+    color: #232323;
+}
+.tip-detail__tab {
+    position: relative;
+    font-size: 16px;
+    color: #999;
+}
+.tip-detail__tab.active:after {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    width: 32px;
+    height: 2px;
+    background-color: #ea3667;
+    transform: translateX(-50%);
+}
+.tip-detail__desc {
+    -webkit-box-flex: 1;
+    flex: 1;
+    color: #999;
+    padding: 0 14px;
+    overflow: auto;
+}
+.tip-detail__item {
+    margin-bottom: 24px;
+}
+.tip-detail__item-title {
+	position:relative;
+	font-size: 14px;
+    color: #333;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    background-size: 12px 12px;
+    background-position: 0;
+    background-repeat: no-repeat;
+}
+.tip-detail__item-title i{
+	color:#ea3690;
+	font-size:14px;
+	position:absolute;
+	left:0;
+	top:50%;
+	transform:translate(0,-42%);
+}
+.tip-detail__item-desc {
+    font-size: 12px;
+    color: #999;
+    padding-left: 20px;
+}
+.detail-pop__close {
+    position: relative;
+    line-height: 46px;
+    text-align: center;
+    font-size: 15px;
+    color: #666;
+    border-top: 1px solid hsla(0,0%,90%,.5);
+}
+.detail-pop__close:before {
+    content: "";
+    position: absolute;
+    top: -56px;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background: linear-gradient(180deg,hsla(0,0%,100%,0),#fff);
+}

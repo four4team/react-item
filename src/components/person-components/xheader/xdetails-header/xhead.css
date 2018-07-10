@@ -1,0 +1,38 @@
+.navbar {
+    height: 44px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.15);
+    overflow: hidden;
+    z-index: 10;
+}
+.navbar .btn-left, .navbar .title {
+    font-size: 16px;
+    line-height: 44px;
+    height: 44px;
+}
+.navbar .btn-left {
+    position: absolute;
+    left: 14px;
+    top: 0;
+}
+.navbar .middle-wrap {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    text-align: center;
+    height: 44px;
+    max-width: 200px;
+    margin: 0 auto;
+}
+.navbar .middle-wrap .middle-title {
+    color: #525252;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 600;
+}
