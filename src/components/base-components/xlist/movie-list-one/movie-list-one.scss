@@ -1,0 +1,35 @@
+.wrap{
+    
+    ul{
+        display: flex;flex-wrap: nowrap;
+        li{
+            display: flex;flex-direction: column;margin-right:10px;position: relative;
+            .icon{
+                position:absolute;width:28px;height:30px;color:#fff;
+                left:2px;top:-3px;background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAA8CAYAAAAzF3kIAAAAAXNSR0IArs4c6QAAAsdJREFUaAXtms9rE0EUx79vSGJT1OIPsIrEm7YqRRskqJeeVCJeREG9WWs8eOtJPeWqqHiSWjB/gOJNavUiaAVTifUHkVq9qCAKCoK/WtPd8W2i6bJtMkTa8FZmIezbN9+d+b73mc1pCHzprr61mHTPgdADrVd7ubBchdcvTsfdxMVNuP5rLs9ULm7KfcqFLZ9LID03+qrI1ikfQ2R/Nx68D/pVZXIhLW6mGJ0qoVQYxfYdM7lKpMrbMpgN4bMG2jWcuw+Ryvjtq7B9c37zwZiLjPE/ypU8UgNFHOQYiARFYXsm0DsuKmBbp7/ibVsRPcdJrz8aHA2IhT8uicaoMFiq5VLVGvhf8rbAsJO0BC1B4R2wW1Q4IKM9S9DYIuECS1A4IKM9S9DYIuECS1A4IKM9S9DYIuECS1A4IKM9S9DYIuECS1A4IKM9S9DYIuECS1A4IKM9S9DYIuECS1A4IKM9S9DYIuECS1A4IKM9S9DYIuECS1A4IKM9S9DYIuECS1A4IKM9S9DYonoCAp+jpql6koUem2+CDohGoNQZRGkLDq+L40iiFSraBVKnuNh7PD690EX554/wgj/41G+rP9lYTB/5QOowzzOE+NI79OTSl+r7xWr0nCPvd1YnM2345uziNdMgvYfPsrZXVY0GXrP2rXFQqP0i6Q29I7zYztqS4Ai5nHnERQ2Vixq/WiCifzpUq/m4PDae2ArXSfN8aS42xfcGdhWN0USuO+jQ/0y689heOO5Nf3JWTPjMudv8uwUdHaaJwU+zNPOQ0B0nVwCTu8t0Ae++su60ig7QeO5GPQ15g7qjN8Pdu8ATLv4j1nwaf4zjCqVDiTxlsx65pl06m1W49mYbXMVkPbo6yYuX/fL9J++efnqZGzAZ+vsCKt+Gm4RCC1TsMRUvfzC93MxxvblvFabRyYW2YNGy+/Ts/Pdmri92rd/DSLLMQNi9tQAAAABJRU5ErkJggg==);
+                background-size: 100%;
+                i:first-child{font-size:22px;font-weight: 700;
+                                position: absolute;left: 1px;top:-5px;
+                            }
+                i:nth-child(2){font-size:12px;font-weight: normal;position: absolute;right:4px;top:0;}
+                i:last-child{font-size: 8px;-webkit-transform: scale(.8);
+                                transform: scale(.8);-webkit-transform-origin: left;
+                                transform-origin: left;position: absolute;
+                                bottom:0;right: 2px;
+                            }    
+                }
+                
+            img{width:102px;height:137px;}
+            a{ white-space: nowrap;width:102px;
+               margin-top: 7px;margin-bottom: 3px;
+               color: #262626;overflow: hidden;
+               text-overflow: ellipsis;
+            }
+            span{
+                i:first-child{color:#ff2661;font-size:14px;}
+                i:last-child{color:#999;font-size:12px;transform: scale(.8);transform-origin: left bottom;}
+                del{color:#999;font-size:12px;}
+            }   
+        }
+    }
+}

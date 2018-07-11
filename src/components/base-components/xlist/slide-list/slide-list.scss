@@ -1,0 +1,13 @@
+.home_entries{
+    display: flex;padding:30px 14px;width:100%;
+    overflow-y:hidden;height:118px;
+        a{
+            display: flex;flex-direction: column;justify-content: center;
+            width:84px;height:72px;padding-right:30px;align-items: center;
+            img{width:46px;height:46px;}
+            p{width:54px;color:#5c5c56;padding-top: 9px;text-align: center;}
+            
+        }
+    
+}
+.home_entries::-webkit-scrollbar {display:none}

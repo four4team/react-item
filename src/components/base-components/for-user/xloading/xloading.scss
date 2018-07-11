@@ -1,0 +1,9 @@
+.loadmore{
+        position: fixed;
+        background: rgba(0,0,0,0.5);color:#fff;
+        width:160px;height:40px;line-height: 40px;
+        text-align: center;border-radius: 8px;
+        span{
+            word-break: break-all;font-size:17px;
+        }
+}

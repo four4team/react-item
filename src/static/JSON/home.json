@@ -1,0 +1,64 @@
+{
+	"kind_list": [{
+					"imgurl": "https://img.piaoniu.com/icon/home/ych@3x.png",
+					"title": "演唱会"
+				},{
+					"imgurl": "https://img.piaoniu.com/icon/home/hjgj@3x.png",
+					"title": "话剧歌剧"
+				},{
+					"imgurl": "https://img.piaoniu.com/icon/home/xxzl@3x.png",
+					"title": "休闲展览"
+				},{
+					"imgurl": "https://img.piaoniu.com/icon/home/tyss@3x.png",
+					"title": "体育赛事"
+				},{
+					"imgurl": "https://img.piaoniu.com/icon/home/yyh@3x.png",
+					"title": "音乐会"
+				},{
+					"imgurl": "https://img.piaoniu.com/icon/home/rtqz@3x.png",
+					"title": "儿童亲子"
+				},{
+					"imgurl": "https://img.piaoniu.com/icon/home/wdbl@3x.png",
+					"title": "舞蹈芭蕾"
+				},{
+					"imgurl": "https://img.piaoniu.com/icon/home/xqzy@3x.png",
+					"title": "戏曲综艺"
+				}],
+	"banner": ["https://img.piaoniu.com/banner/ccf1dc35d4b5cf4cab1283b2b878b278534cf9de.jpg?imageView2/2/w/750/h/350/format/jpg/q/80",
+			   "https://img.piaoniu.com/banner/1dde8a9a4a824c07db8ded578edf39e97fbcbde6.jpg?imageView2/2/w/750/h/350/format/jpg/q/80",
+			   "https://img.piaoniu.com/banner/1f31ca322d97830188d5443f5ec71dc8ec4a3b19.jpg?imageView2/2/w/750/h/350/format/jpg/q/80",
+			   "https://img.piaoniu.com/banner/f64e294fdfd7e06991095e98c22127f30c472813.jpg?imageView2/2/w/750/h/350/format/jpg/q/80",
+			   "https://img.piaoniu.com/banner/d4a15c04a15a96da67f75aeab5c1326f8bebe60d.jpg?imageView2/2/w/750/h/350/format/jpg/q/80",
+			   "https://img.piaoniu.com/banner/6ff6300bdbc3ec92b3491d7e6c756d0e5b0aeee2.jpg?imageView2/2/w/750/h/350/format/jpg/q/80"
+			],
+	"recommend": [{
+		"imgurl": "https://img.piaoniu.com/banner/4d657dcb86ef37f70697985d8a866e62c4111a20.jpg?imageView2/2/w/400/h/180/format/jpg/q/80",
+		"title": "一元看演出",
+		"desc": "泰迪熊",
+		"info": "即将开始"
+	},{
+		"imgurl": "https://img.piaoniu.com/banner/b1cf936a688482efeadd535bcad1a2ebf6d250b5.jpg?imageView2/2/w/200/h/200/format/jpg/q/80",
+		"title": "拼团汇",
+		"desc": "29.9元看剧",
+		"desc_2": "共享好时光"
+	},{
+		"imgurl": "https://img.piaoniu.com/banner/551a5a6b72c5ea45f0b4ea7d6263f36da4c67e72.jpg?imageView2/2/w/200/h/200/format/jpg/q/80",
+		"title": "原价开售",
+		"desc": "薛子谦演唱会",
+		"desc_2": "7月16日 17:50"
+	}],
+	"header": {
+		"hot": {
+			"title_l": "近期热门",
+			"title_r": "全部 >"
+		},
+		"discount": {
+			"title_l": "折扣专区",
+			"title_r": "全部 >"
+		},
+		"guess_like": {
+			"title_l": "猜你喜欢"
+		}
+	},
+	"one_img":["https://img.piaoniu.com/banner/a63d961362025b2e78e82ee1c9fab1f827e1cb2a.jpg"]
+}
