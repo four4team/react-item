@@ -15,7 +15,14 @@ import Home from './pages/home';
 import Details from './pages/details';
 //演唱会页面
 import Concert from './pages/concert';
-
+//舞蹈芭蕾页面
+import Xdancing from './pages/dance';
+//休闲展览页面
+import Xrelaxing from './pages/relax';
+//个人主页页面
+import Xpersonal from './pages/personal';
+//登录页面
+import Xlogin from './pages/login';
 //创建仓库
 const store = createStore((state = {
 	isShowNotice: false,
@@ -49,6 +56,10 @@ ReactDOM.render(
 				<Route exact path="/" component={Home}/>
 				<Route path="/details" component={Details}/>
 				<Route path="/concert" component={Concert}/>
+				<Route path="/relax" component={Xrelaxing}/>
+				<Route path="/person" component={Xpersonal}/>
+				<Route path="/login" component={Xlogin}/>
+				<Route path="/dance" component={Xdancing}/>
 			</div>
 		</Provider>
 	</Router>,
