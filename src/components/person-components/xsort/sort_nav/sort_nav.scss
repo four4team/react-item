@@ -1,0 +1,24 @@
+.sortNav{
+    display:flex;
+    width:100%;
+    flex-direction:column;
+    nav{
+        background-color: #f5f5f5;
+        opacity:0.6;
+        padding:8px 16px;        
+        img{
+            height:48px;
+            width:48px;
+            display:inline-block;
+        }
+        span{
+            display:inline-block;
+            height:48px;
+            width:230px;
+            line-height:48px;
+            text-align: center;
+            font-size:18px;
+            color:#0086B3;            
+        }
+    }
+}

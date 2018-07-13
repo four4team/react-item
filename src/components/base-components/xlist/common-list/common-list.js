@@ -11,7 +11,8 @@ class Common_list extends Component {
 			len: 0,
 			times: 0,
 			topTimes: 0,
-			judgeTimes: 0
+			judgeTimes: 0,
+			message: ''
 		}
 	}
 	render(){
@@ -67,6 +68,12 @@ class Common_list extends Component {
 							return;
 						}
 				})(this)}
+				{(function(self){
+					if(self.state.message.length>0){
+						return <p className={styles.last}>{self.state.message}</p>
+					}
+				})(this)}
+				
 			</ul>
 		)
 	}
@@ -80,9 +87,36 @@ class Common_list extends Component {
 				})
 			}
 		})
+		if(self.props.isrequest==='true'){
+		  $.ajax({
+				url: 'http://119.23.55.48:8080/lazy',
+						data: {
+							kind: self.props.types,
+							num: self.state.times*10
+						},
+						success(msg){
+							var times_up = self.state.times+1;
+							self.setState({
+								data: self.state.data.concat(msg),
+								times: times_up,
+								judgeTimes: times_up 
+							})
+							if(self.state.times==1){
+								self.setState({
+									topTimes: Math.ceil((self.state.len)/(msg.length))
+								})
+							}
+							
+							self.props.endLoad();
+						}
+			})
+		  	
+		  	
+		  	
+		}
 		//懒加载 ———— 判断滚动条是否到底部,进行相应的发送ajax请求拿数据
 		//judgeTimes用来防止用户捣乱，即滚动条拉到底，然后又往回拉，接着拉到底
-		//这样会发送没必要的ajax请求(这步暂时没做)
+		//这样会发送没必要的ajax请求
 		$(window).scroll(function(){
 		　　var scrollTop = $(this).scrollTop();
 		　　var scrollHeight = $(document).height();
@@ -120,7 +154,11 @@ class Common_list extends Component {
 					})
 				}
 				
-		　　}
+		　　}else if(self.state.times>=self.state.topTimes&&self.state.topTimes!=0){
+				self.setState({
+					message: '已经到底啦'
+				})
+			}
 		})
 		
 	}

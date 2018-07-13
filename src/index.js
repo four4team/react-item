@@ -27,7 +27,10 @@ import Xlogin from './pages/login';
 const store = createStore((state = {
 	isShowNotice: false,
 	isShowDetails: false,
-	willLoad: false
+	willLoad: false,
+	sortText:'',
+	navImgurl:'',
+	navText:''
 }, action) => {
 	switch(action.type) {
 		case 'notice':
@@ -42,6 +45,15 @@ const store = createStore((state = {
 	      	return Object.assign({},state,{
 	      		willLoad: action.willLoad
 	      	});
+      	case 'sortJustify':
+      	return Object.assign({},state,{
+      		sortText: action.sortText
+      	});
+      	case 'sendNavData':
+      	return Object.assign({},state,{
+      		navImgurl: action.navImgurl,
+      		navText:action.navText
+      	});
 		default:
 			return state
 	}

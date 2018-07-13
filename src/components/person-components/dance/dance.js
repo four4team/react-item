@@ -1,6 +1,8 @@
 import React, {
 	Component
 } from 'react';
+import {connect} from 'react-redux';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 //引用jquery
 import $ from 'jquery';
 //引用样式
@@ -14,6 +16,10 @@ class Xdance extends Component {
 			hData: []
 		}
 	}
+	//携带数据跳转至详情页的方法
+	detailsInfo(obj) {
+		localStorage.setItem('info', JSON.stringify(obj))
+	}
 	//生命周期  请求数据 
 	componentDidMount() {
 		var self = this
@@ -21,8 +27,9 @@ class Xdance extends Component {
 			type: "get",
 			url: "http://119.23.55.48:8080/ticket?kind=dance_ballet",
 			success(data) {
+				localStorage.setItem('danceData',JSON.stringify(data));
 				self.setState({
-					hData: data
+					hData: JSON.parse(localStorage.getItem('danceData'))
 				})
 			}
 		});
@@ -34,13 +41,31 @@ class Xdance extends Component {
 
 			<div>	{
 				(function(self){
-					console.log(self.state.hData)
 					/* 根据数据生成相应页面*/
-					return self.state.hData.map((item,idx)=>{
+					let data = self.state.hData;
+						//判断从redux拿回不同的数据 实现相关排序功能
+					if(self.props.sortText === 'zonghe'){
+						 data.sort(function(a,b){							
+							return a.id - b.id;
+						})
+					}else if(self.props.sortText === 'lowPrice'){
+						data.sort(function(a,b){							
+							return a.lowPrice - b.lowPrice;
+						})
+					}else if(self.props.sortText === 'news'){
+						data.sort(function(a,b){							
+							return Date.parse(b.timeRange) - Date.parse(a.timeRange);
+						})
+					}else if(self.props.sortText === 'praise'){
+						data.sort(function(a,b){						
+							return b.rank - a.rank;
+						})
+					}
+					return data.map((item,idx)=>{
 						let rank = Number(item.rank).toFixed(1)
 						let discountRate = Number(item.discountRate).toFixed(1)
 						let lowPrice = item.lowPrice
-						return <a data-guid={item.id} key={idx}>
+						return <Link to="/details" onClick={self.detailsInfo.bind(this,data[idx])} key={idx}>
 									<img src={item.poster}/>
 									<main>
 									{
@@ -74,7 +99,7 @@ class Xdance extends Component {
 										})()
 									}
 									</main>									
-						</a>
+						</Link>
 					})
 				})(this)
 				}
@@ -85,4 +110,10 @@ class Xdance extends Component {
 
 }
 
-export default Xdance;
+export default connect((state) => {
+	return state
+}, (dispatch) => {
+	return {
+		
+	}
+})(Xdance); 
