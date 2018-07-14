@@ -1,0 +1,157 @@
+.hLogin {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: #f2f2f2;
+	nav{
+	    display: flex;
+	    background-color:#fff;
+	    width: 100%;
+	    height:44px;
+	    font-size:16px;
+	    align-items:center;
+	    position:relative;
+
+	    a{
+	       position:absolute;
+	       left:16px;
+	       top:0;
+	       display:block;
+	       height:44px;
+	       width:44px;
+	       line-height: 44px;
+	       text-align: center;
+	       color:#000;
+	    }
+	    p{
+	        flex:1;
+	        text-align:center;
+	        font-weight:bold;
+	    }
+	}
+	.loginPage {
+		display: flex;
+		flex-direction: column;
+		background: url('//static.piaoniu.com/m/static/img/headerBg.11f2adb.jpg');
+		.pageTop {
+			display: flex;
+			.topRight {
+                flex: 1;
+                height: 133px;
+                justify-content: flex-end;
+                padding-right: 19px;
+                
+            }
+			.topPublic {
+				display: flex;
+				flex: 1;
+				height: 133px;
+				/*justify-content: center;*/
+				align-items: center;
+				padding-left: 16px;
+				padding-right:19px;
+				font-size: 16px;
+				color: #fff;
+				.portrait {
+					height: 64px;
+					width: 64px;
+                    background: url('../../../static/imgs/htouxiang.png');
+				}
+				.preson{
+				    width:100%;
+                    text-align: right;
+                    font-size:14px;
+                }
+			}
+			
+		}
+		.pageDown {
+			width: 100%;
+			height: 49px;
+			display: flex;
+			background-color: rgba(6, 6, 6, 0.2);
+			align-items: center;
+			li {
+				color: #fff;
+				font-size: 14px;
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				text-align: center;
+			}
+		}
+	}
+	.tableView {
+		width: 100%;
+		background-color: #f2f2f2;
+		display: flex;
+		flex-direction: column;
+		.tableOne {
+			background-color: #fff;
+			display: flex;
+			align-items: center;
+			height: 44px;
+			border-bottom: 1px solid #c6c6c6;
+			font-size: 14px;
+			padding: 0 19px 0 16px;
+			.oneLeft {
+				flex: 1;
+			}
+			.oneRight {
+				flex: 1;
+				text-align: right;
+				color: #999;
+				font-size: 12px;
+				#oneRightArrow{
+					font-size: 12px;
+				}
+			}
+		}
+		.tableTwo {
+			.iconfont {
+				font-size: 24px;
+			}
+		}
+		.tableFour {
+			width: 100%;
+			background-color: #fff;
+			display: flex;
+			align-items: center;
+			padding: 0 19px 0 16px;
+			flex-direction: column;
+			font-size: 14px;
+			li {
+				display: flex;
+				flex: 1;
+				width: 100%;
+				height: 45px;
+				border-bottom: 1px solid #c6c6c6;
+				background-color: #fff;
+				align-items: center;
+				span {
+					flex: 1;
+				}
+				span:nth-child(2) {
+					text-align: right;
+					color: #999;
+				}
+			}
+		}
+		.tablePublic {
+			background-color: #fff;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			height: 68px;
+			font-size: 14px;
+			margin-bottom: 10px;
+			li {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+			}
+		}
+	}
+}

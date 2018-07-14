@@ -27,6 +27,15 @@ import Kill from './pages/kill'
 import Xiqu from './pages/xiqu'
 //各类票展示页
 import Exhibit from './pages/exhibit'
+//舞蹈芭蕾页面
+import Xdancing from './pages/dance'
+//休闲展览页面
+import Xrelaxing from './pages/relax'
+//个人主页页面
+import Xpersonal from './pages/personal'
+//登录页面
+import Xlogin from './pages/login'
+
 //创建仓库
 const store = createStore((state = {
 	isShowNotice: false,
@@ -35,7 +44,10 @@ const store = createStore((state = {
 	isShowPop: false,
 	sortType: '',
 	search: '',
-	isShowSearchPop: false
+	isShowSearchPop: false,
+	sortText:'',
+	navImgurl:'',
+	navText:''
 }, action) => {
 	switch(action.type) {
 		case 'notice':
@@ -63,6 +75,15 @@ const store = createStore((state = {
 	   			search: action.search,
 	   			isShowSearchPop: action.isShowSearchPop
 	   		});
+      	case 'sortJustify':
+      	return Object.assign({},state,{
+      		sortText: action.sortText
+      	});
+      	case 'sendNavData':
+      	return Object.assign({},state,{
+      		navImgurl: action.navImgurl,
+      		navText:action.navText
+      	});
 		default:
 			return state
 	}
@@ -83,6 +104,10 @@ ReactDOM.render(
 				<Route path="/Xiqu" component={Xiqu} />
 				<Route path="/sports" component={Sports} />
 				<Route path="/xiuxian" component={Xiuxian} />
+				<Route path="/relax" component={Xrelaxing}/>
+				<Route path="/person" component={Xpersonal}/>
+				<Route path="/login" component={Xlogin}/>
+				<Route path="/dance" component={Xdancing}/>
 			</div>
 		</Provider>
 	</Router>,
