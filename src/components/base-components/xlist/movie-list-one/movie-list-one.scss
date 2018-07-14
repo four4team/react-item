@@ -2,7 +2,7 @@
     
     ul{
         display: flex;flex-wrap: nowrap;
-        li{
+        >a{
             display: flex;flex-direction: column;margin-right:10px;position: relative;
             .icon{
                 position:absolute;width:28px;height:30px;color:#fff;

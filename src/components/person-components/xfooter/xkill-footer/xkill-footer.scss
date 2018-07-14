@@ -1,0 +1,21 @@
+.bottom{
+    background:#ff9148;color:#fff;
+    padding: 15px 11px;
+    a{color:#fff;}
+    .btn_more{
+        height:50px;width:100%;background:#da6c23;border-radius: 4px;
+        display: flex;justify-content: center;align-items: center;font-size: 17px;
+    }
+    .title{
+        display: flex;align-items: center;padding:20px 0 16px 0;
+        .leftLine{
+            width:33%;height:2px;background: #fff;
+        }
+        .rightLine{
+            width:33%;height:2px;background: #fff;
+        }
+    }
+    .campain{
+        
+    }
+}

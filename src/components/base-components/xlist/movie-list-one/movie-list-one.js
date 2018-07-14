@@ -1,4 +1,5 @@
 import React,{ Component } from 'react'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import styles from './movie-list-one.scss'
 import $ from 'jquery'
 import Swiper from 'swiper'
@@ -22,7 +23,7 @@ class Xmovie_list_one extends Component {
 				<ul ref="myul" className="swiper-wrapper" style={{display:"flex"}}>
 					{
 						 this.props.list.map((item,i)=>{
-								return <li key={i} className="swiper-slide">
+								return <Link key={i} className="swiper-slide" to="/details" onClick={this.toDetails.bind(this,item)}>
 											{function(self){
 												if(self.props.names=='discount'){
 													return <b className={styles.icon}>
@@ -48,7 +49,7 @@ class Xmovie_list_one extends Component {
 													return <i>起</i>
 												}
 											}(this)}</span>
-										</li>
+										</Link>
 							})
 					}
 				</ul>
@@ -81,7 +82,9 @@ class Xmovie_list_one extends Component {
 			})
 		}
 	}
-	
+	toDetails(msg){
+		localStorage.setItem('info',JSON.stringify(msg));
+	}
 	componentDidMount(){
 		new Swiper('.swiper-container',{
 			freeMode: true,

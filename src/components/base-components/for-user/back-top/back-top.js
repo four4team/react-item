@@ -10,7 +10,7 @@ class Back_top extends Component {
 	}
 	render(){
 		return (
-			<div className={styles.back} style={{display:this.state.showback}} onClick={this.backTop} onMouseOver={this.show.bind(this)}>
+			<div className={styles.back} style={{display:this.state.showback}} onClick={this.backTop}>
 				<i className="iconfont icon-fanhuidingbu"></i>
 			</div>
 		)
@@ -18,8 +18,9 @@ class Back_top extends Component {
 	
 	componentDidMount(){
 		var self = this;
-		document.addEventListener('scroll',function(){
-			if(window.scrollY>400){
+		window.addEventListener('scroll',function(){
+			
+			if(window.scrollY>600){
 				self.setState({
 					showback: 'block'
 				})
@@ -34,18 +35,7 @@ class Back_top extends Component {
 	}
 	backTop(){
 				window.scrollTo(0,0);
-			}
-	show(){
-//		var self = this;
-//		document.addEventListener('scroll',function(){
-//			if(window.scrollY>300){
-//				self.setState({
-//					showback: 'block'
-//				})
-//			}
-//		})
-	}
-	
+		}
 }
 
 export default Back_top

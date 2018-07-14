@@ -1,6 +1,6 @@
 .common{
     display:flex;flex-direction: column;
-    li{
+    a{
         padding:15px 15px 1px 15px;display: flex;width:100%;
         .list_l{
             position: relative;
@@ -25,7 +25,7 @@
             p{color:#999;font-size:12px;}
             p:first-child{
                 font-size:15px;color:#333;font-weight: 600;
-                padding-top:9px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
+                overflow: hidden;text-overflow: ellipsis;white-space: nowrap;
                 width:100%;padding-right:4px;
             }
             p:nth-child(2){
@@ -43,6 +43,6 @@
             }
         }
     }
-  
+    .last{width:100%;text-align: center;height:24px;line-height: 24px;color:red;}
     
 }

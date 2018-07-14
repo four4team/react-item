@@ -60,5 +60,6 @@
 			"title_l": "猜你喜欢"
 		}
 	},
-	"one_img":["https://img.piaoniu.com/banner/a63d961362025b2e78e82ee1c9fab1f827e1cb2a.jpg"]
+	"one_img":["https://img.piaoniu.com/banner/a63d961362025b2e78e82ee1c9fab1f827e1cb2a.jpg"],
+	"pages":["/concert","/Opera","/xiuxian","/sports","cc","dd","ee","/xiqu"]
 }

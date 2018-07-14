@@ -1,5 +1,6 @@
 import React,{ Component } from 'react'
 import {connect} from 'react-redux'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import $ from 'jquery'
 import styles from './common-list.scss'
 
@@ -11,7 +12,8 @@ class Common_list extends Component {
 			len: 0,
 			times: 0,
 			topTimes: 0,
-			judgeTimes: 0
+			judgeTimes: 0,
+			message: ''
 		}
 	}
 	render(){
@@ -19,8 +21,23 @@ class Common_list extends Component {
 			<ul className={styles.common}>
 				{(function(self){
 					if(self.state.data[0]!=null){
-						return self.state.data.map((item,i)=>{
-								return <li key={i}>
+						var data = self.state.data;
+						if(self.props.sortType!=''){
+							if(self.props.sortType=='star'){
+								data.sort(function(a,b){
+									return b[self.props.sortType]-a[self.props.sortType]
+								})
+							}else{
+								data.sort(function(a,b){
+									return a[self.props.sortType]-b[self.props.sortType]
+								})
+							}
+							
+						}else{
+							data = self.state.data;
+						}
+						return data.map((item,i)=>{
+								return <Link to="/details" onClick={self.toDetails.bind(self,item)} key={i}>
 											<div className={styles.list_l}>
 												<img src={item.poster}/>
 												{function(){
@@ -36,15 +53,7 @@ class Common_list extends Component {
 											<div className={styles.list_r}>
 												<p>{item.properName}</p>
 												<p>
-													<span>{(function(){
-															var str = JSON.parse(item.events)[0].specification.replace(/[\u4e00-\u9fa5]/g,'');
-															if(str.indexOf('-')<0){
-																str = str.slice(0,4)+'.'+str.slice(4,6)+'.'+str.slice(-2,str.length);
-																return str;
-															}else{
-																return str;
-															}
-														})()}
+													<span>{item.timeRange}
 													</span>&nbsp;|&nbsp;
 													<span>{item.venueName}</span>
 												</p>
@@ -61,28 +70,66 @@ class Common_list extends Component {
 												<p className={styles.price}><span>{item.lowPrice}</span>元起
 												</p>
 											</div>
-									   </li>
+										</Link>
 							})
 						}else{
 							return;
 						}
 				})(this)}
+				{(function(self){
+					if(self.state.message.length>0){
+						return <p className={styles.last}>{self.state.message}</p>
+					}
+				})(this)}
+				
 			</ul>
 		)
+	}
+	
+	toDetails(msg){
+		localStorage.setItem('info',JSON.stringify(msg));
 	}
 	componentDidMount(){
 		var self =this;
 		$.ajax({
 			url: 'http://119.23.55.48:8080/lazy?kind='+self.props.types,
 			success(msg){
-				self.setState({
-					len: msg
-				})
+					self.setState({
+						len: msg
+					})
 			}
 		})
+		if(self.props.isrequest==='true'){
+		  $.ajax({
+				url: 'http://119.23.55.48:8080/lazy',
+						data: {
+							kind: self.props.types,
+							num: self.state.times*10
+						},
+						success(msg){
+							if (!self) return;
+							var times_up = self.state.times+1;
+							self.setState({
+								data: self.state.data.concat(msg),
+								times: times_up,
+								judgeTimes: times_up 
+							})
+							if(self.state.times==1){
+								self.setState({
+									topTimes: Math.ceil((self.state.len)/(msg.length))
+								})
+							}
+							
+							self.props.endLoad();
+						}
+			})
+		  	
+		  	
+		  	
+		}
 		//懒加载 ———— 判断滚动条是否到底部,进行相应的发送ajax请求拿数据
 		//judgeTimes用来防止用户捣乱，即滚动条拉到底，然后又往回拉，接着拉到底
-		//这样会发送没必要的ajax请求(这步暂时没做)
+		//这样会发送没必要的ajax请求
 		$(window).scroll(function(){
 		　　var scrollTop = $(this).scrollTop();
 		　　var scrollHeight = $(document).height();
@@ -120,10 +167,15 @@ class Common_list extends Component {
 					})
 				}
 				
-		　　}
+		　　}else if(self.state.times>=self.state.topTimes&&self.state.topTimes!=0){
+				self.setState({
+					message: '已经到底啦'
+				})
+			}
 		})
 		
 	}
+	
 }
 
 export default connect((state)=>{
@@ -146,3 +198,16 @@ export default connect((state)=>{
 	    }
 	  }
 })(Common_list)
+
+//	(function(){
+//		var str = JSON.parse(item.events)[0].specification.replace(/[\u4e00-\u9fa5]/g,'');
+//		if(str.indexOf('-')<0){
+//			str = str.slice(0,4)+'.'+str.slice(4,6)+'.'+str.slice(-2,str.length);
+//			return str;
+//		}else{
+//			return str;
+//		}
+//	})()
+
+
+						
