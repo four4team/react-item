@@ -10,7 +10,7 @@ import Xloading from '../components/base-components/for-user/xloading/xloading'
 import Back_top from '../components/base-components/for-user/back-top/back-top'
 import Part_list from '../components/base-components/xlist/part-list/part-list'
 
-class Xiuxian extends Component{
+class Xchild extends Component{
 	render(){
 		return (
 			<div style={{height:'100%',background:'#fff'}}>
@@ -18,10 +18,10 @@ class Xiuxian extends Component{
 				<Xsort/>
 				<Pop/>
 				<div style={{display:!this.props.isShowSearchPop?'block':'none'}}>
-					<Common_list types="leisure_exhibition" isrequest='true'/>
+					<Common_list types="children" isrequest='true'/>
 				</div>
 				<div style={{display:this.props.isShowSearchPop?'block':'none'}}>
-					<Part_list kind="leisure_exhibition" field={this.props.search}/>
+					<Part_list kind="children" field={this.props.search}/>
 				</div>
 				<Xloading/>
 				<Back_top/>
@@ -35,4 +35,4 @@ export default connect((state)=>{
 },(dispatch)=>{
 	return {
 	}
-})(Xiuxian)
+})(Xchild)

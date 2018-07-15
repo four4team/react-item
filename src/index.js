@@ -17,10 +17,12 @@ import Details from './pages/details';
 import Concert from './pages/concert';
 //话剧歌剧
 import Opera from './pages/Opera';
-//休闲展览
-import Xiuxian from './pages/xiuxian'
+//儿童亲子
+import Xchild from './pages/Xchild'
 //体育赛事页
 import Sports from './pages/sports'
+//音乐会页
+import Music from './pages/music';
 //秒杀页
 import Kill from './pages/kill'
 //戏曲综艺页
@@ -40,6 +42,8 @@ import Xlogin from './pages/login'
 const store = createStore((state = {
 	isShowNotice: false,
 	isShowDetails: false,
+	texts: '综合排序',
+	isShowCalendar: false,
 	willLoad: false,
 	isShowPop: false,
 	sortType: '',
@@ -72,6 +76,10 @@ const store = createStore((state = {
 	   		return Object.assign({},state,{
 	   			sortType: action.sortType
 	   		});
+	   	case 'calendar':
+	    	return Object.assign({},state,{
+	    		isShowCalendar: action.isShowCalendar
+	    	});
 	   	case 'willSearch':
 	   		return Object.assign({},state,{
 	   			search: action.search,
@@ -105,15 +113,16 @@ ReactDOM.render(
 	<Router>
 		<Provider store={store}>
 			<div>
-				<Route exact path="/" component={Home} />
-				<Route path="/details" component={Details} />
-				<Route path="/concert" component={Concert} />
-				<Route path="/kill" component={Kill} />
-				<Route path="/exhibit" component={Exhibit} />
-				<Route path="/Opera" component={Opera} />
-				<Route path="/Xiqu" component={Xiqu} />
-				<Route path="/sports" component={Sports} />
-				<Route path="/xiuxian" component={Xiuxian} />
+				<Route exact path="/" component={Home}/>
+				<Route path="/details" component={Details}/>
+				<Route path="/concert" component={Concert}/>
+				<Route path="/music" component={Music}/>
+				<Route path="/kill" component={Kill}/>
+				<Route path="/exhibit" component={Exhibit}/>
+				<Route path="/Opera" component={Opera}/>
+				<Route path="/Xiqu" component={Xiqu}/>
+				<Route path="/sports" component={Sports}/>
+				<Route path="/child" component={Xchild}/>
 				<Route path="/relax" component={Xrelaxing}/>
 				<Route path="/person" component={Xpersonal}/>
 				<Route path="/login" component={Xlogin}/>

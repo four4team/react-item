@@ -199,12 +199,12 @@ small .v, .level-tag .special .lv, .level-tag .special .v {
 .level-tag .level .lv, .level-tag .level .text {
     font-size: 12px;
     position: relative;
-    top: -5px;
+    top: -2.5px;
 }
 .level-tag.level-tag-small .level .text {
 	position: relative;
 	color: #fff;
-    top: -12.5px;
+    top: -2.5px;
     transform: scale(.75);
     display: inline-block;
     transform-origin: center;

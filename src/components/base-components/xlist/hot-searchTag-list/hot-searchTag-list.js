@@ -20,9 +20,6 @@ class Xsearch_tag extends Component {
 			</div>
 		)
 	}
-	componentDidMount(){
-		console.log(this.state.keywords)
-	}
 }
 
 export default connect((state)=>{

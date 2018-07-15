@@ -46,13 +46,13 @@ class Xregister extends Component {
 					{
 					(function(self){
 						if(self.state.regBool){
-							return <div><Link to="/person" className="iconfont icon-icon-test" style={{
+							return <div><a className="iconfont icon-icon-test" style={{
 								position: "absolute",
 						        fontSize: "18px",
 						        top: "14px",
 						        left: "14px",
 						        color: "#999"
-							}}></Link>
+							}} onClick={self.back}></a>
 							<h6 className={styles.regTitle}>手机快捷登录</h6>
 							<div className={styles.regForm}>
 							<div className={styles.row}>
@@ -131,6 +131,9 @@ class Xregister extends Component {
 					</div>
 
 		)
+	}
+	back(){
+		window.history.go(-1);
 	}
 
 }

@@ -20,10 +20,10 @@
                 }
                 
             img{width:102px;height:137px;}
-            a{ white-space: nowrap;width:102px;
+            b{ white-space: nowrap;width:102px;
                margin-top: 7px;margin-bottom: 3px;
                color: #262626;overflow: hidden;
-               text-overflow: ellipsis;
+               text-overflow: ellipsis;font-weight: normal;
             }
             span{
                 i:first-child{color:#ff2661;font-size:14px;}

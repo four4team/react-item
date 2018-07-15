@@ -21,7 +21,7 @@ class Back_top extends Component {
 		window.addEventListener('scroll',this.handel);
 	}
 	componentWillUnmount(){
-		console.log('你好，已被移除')
+		//console.log('你好，已被移除')
 		window.removeEventListener('scroll',this.handel);
 	}
 	handel(){

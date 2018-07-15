@@ -45,20 +45,7 @@
     min-height: 100px;
     margin-bottom: 10px;
 }
-.header-main .info .title {
-	background: #292138;
-    font-size: 17px;
-    font-weight: 700;
-    min-height: 44px;
-    line-height: 22px;
-    color: #fff;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 13px;
-}
+
 .header-main .info .stars-score {
     margin-bottom: 18px;
     height: 20px;
@@ -164,7 +151,7 @@
     font-size: 11px;
 }
 .header-bottom .time-range {
-    font-size: 15px;
+    font-size: 14px;
     padding-top: 24px;
 }
 .header-bottom .venue {
@@ -183,7 +170,7 @@
     flex: 1;
 }
 .header-bottom .venue .inner .name {
-    font-size: 15px;
+    font-size: 14px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -211,4 +198,15 @@
     width: 8px;
     position: absolute;
     margin-top: -7px;
+}
+.header-main .info .title {
+	font-size: 17px;
+    font-weight: 700;
+    min-height: 44px;
+    line-height: 22px;
+    color: #fff;
+    text-overflow: ellipsis;
+    margin-bottom: 13px;
+    color: #fff;
+    
 }

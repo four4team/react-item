@@ -35,7 +35,7 @@ class Xmovie_list_one extends Component {
 											}(this)}
 											
 											<img src={item.poster}/>
-											<a>{item.properName}</a>
+											<b>{item.properName}</b>
 											<span><i>￥{(function(){
 												if(item.lowPrice){
 													return item.lowPrice
