@@ -14,7 +14,7 @@ class Xsearch_record extends Component {
 			<ul className={styles.record}>
 				{(function(self){
 					
-					if(self.state.records[0]!=null){
+					if(self.state.records!=null){
 						return self.state.records.map((item,i)=>{
 									return <li key={i}>
 												<span onClick={self.props.tagInput.bind(self,item)}>{item}</span>
@@ -24,7 +24,7 @@ class Xsearch_record extends Component {
 					}
 				})(this)}
 				{(function(self){
-					if(self.state.records[0]!=null){
+					if(self.state.records!=null){
 						return <li onClick={self.clearRecords.bind(self)}>清除历史记录</li>
 					}
 				})(this)}
