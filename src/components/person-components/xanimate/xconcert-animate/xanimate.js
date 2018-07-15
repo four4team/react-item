@@ -8,11 +8,11 @@ class Xanimate extends Component {
 		super(props);
 		this.state = {
 			data: [
-				'http://img3.imgtn.bdimg.com/it/u=793813422,3848437291&fm=27&gp=0.png',
-				'http://img2.imgtn.bdimg.com/it/u=3533884248,3769124868&fm=27&gp=0.png',
-				'http://img1.imgtn.bdimg.com/it/u=1411293729,1590582916&fm=27&gp=0.png',
+				'http://img0.imgtn.bdimg.com/it/u=1312875883,3901067313&fm=27&gp=0.png',
+				'http://p1.music.126.net/dUMlFlUEA6lWmKiHuhJ6Xg==/109951163406409460.jpg',
+				'http://p1.music.126.net/Rr3anSJehpxy8qqNLql6jQ==/109951163404707619.jpg',
 				'http://img5.imgtn.bdimg.com/it/u=778696227,3076099280&fm=11&gp=0.png',
-				'http://img0.imgtn.bdimg.com/it/u=1312875883,3901067313&fm=27&gp=0.png'
+				'http://p1.music.126.net/nQUTIQMRHGTWQubs3PFb0g==/109951163406411778.jpg'
 			]
 		}
 	}

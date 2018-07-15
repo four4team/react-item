@@ -9,39 +9,53 @@ class Xmain extends Component {
 		super(props);
 		this.state = {
 			data: [
-				'https://static.piaoniu.com/nuxt-static/img/starYellow.b0a4b5a.png',
-				'https://static.piaoniu.com/nuxt-static/img/starYellow.b0a4b5a.png',
-				'https://static.piaoniu.com/nuxt-static/img/starYellow.b0a4b5a.png',
+				'https://static.piaoniu.com/nuxt-static/img/starGrey.eefc1c0.png',
+				'https://static.piaoniu.com/nuxt-static/img/starGrey.eefc1c0.png',
+				'https://static.piaoniu.com/nuxt-static/img/starGrey.eefc1c0.png',
 				'https://static.piaoniu.com/nuxt-static/img/starGrey.eefc1c0.png',
 				'https://static.piaoniu.com/nuxt-static/img/starGrey.eefc1c0.png'
-			]
+			],
+			obj: {}
 		}
+	}
+	componentDidMount() {
+		//获取localStorage存储的列表页数据
+		var obj = JSON.parse(localStorage.getItem('info'));
+		this.setState({
+			obj : obj
+		})
 	}
 	render() {
 		return(
 			<div className="header">
 				<div className="header-image"><canvas id="blured-poster"></canvas></div>
 				<div className="header-main">
-					<img id="poster" src="https://img.piaoniu.com/poster/ca773c6f9ef02d26f71341579550a3062ba1d44c.jpg?imageView2/2/w/208/h/280" className="poster"/>
+					<img id="poster" src={this.state.obj.poster} className="poster"/>
 					<div className="video-play">
 						<video className="video"></video>
 					</div>
-					<div className="info">
+					<div className="info"> 
 						<div className="top">
-							<div className="title">2018乐华七子—NEXT亚洲巡回粉丝见面会 上海站</div>
-							<div className="stars-score"><span className="score">6.1</span>
+							<div className="title" style={{display:'-webkit-box',webkitBoxOrient:'vertical',webkitLineClamp:'2',overflow:'hidden'}}>{this.state.obj.name}</div>
+							<div className="stars-score"><span className="score">{this.state.obj.discountRate}</span>
 								<ul className="stars">
+									{/*评星操作*/}
 									{(function(self){
+										var num=Math.floor(self.state.obj.discountRate/2);
 										return self.state.data.map(function(item,idx){
-											return <li key={idx}><img src={item}/></li>
+												if(idx<num){
+													return  <li key={idx}><img src="https://static.piaoniu.com/nuxt-static/img/starYellow.b0a4b5a.png"/></li>
+												}else{
+													return <li key={idx}><img src="https://static.piaoniu.com/nuxt-static/img/starGrey.eefc1c0.png"/></li>
+												}
 										})
 									})(this)}
 								</ul>
 							</div>
 							<div className="price-line">
 								<div className="price-info">
-									<span className="price">727</span><span className="qi">元起</span></div>
-								<div className="buy-num">已有319人购买👑</div>
+									<span className="price">{this.state.obj.lowPrice}</span><span className="qi">元起</span></div>
+								<div className="buy-num">已有{this.state.obj.highPrice}人购买👑</div>
 							</div>
 						</div>
 					</div>
@@ -55,10 +69,10 @@ class Xmain extends Component {
 						<div className="text">该项目尚在预售中</div>
 						<div className="right">查看详情</div>
 					</div>
-					<div className="time-range">2018.07.21 19:30</div>
+					<div className="time-range">{this.state.obj.timeRange}</div>
 					<div className="venue">
 						<div className="inner">
-							<div className="name">国家会展中心虹馆EH</div>
+							<div className="name">{this.state.obj.venueName}</div>
 						</div>
 						<div className="icon"><img src="https://static.piaoniu.com/nuxt-static/img/icon-park2.c5fced0.png"/></div>
 					</div>
@@ -67,6 +81,7 @@ class Xmain extends Component {
 						<div className="arr-right type-undefined"></div>
 					</div>
 				</div>
+				{/*购票须知组件*/}
 				{(function(self){
 						if(self.props.isShowNotice===true){
 							return <Xnotice/>
@@ -74,6 +89,7 @@ class Xmain extends Component {
 							return 
 						}
 					})(this)}
+				{/*查看详情组件*/}
 				{(function(self){
 						if(self.props.isShowDetails===true){
 							return <Xdetails/>
@@ -82,7 +98,6 @@ class Xmain extends Component {
 						}
 					})(this)}
 			</div>
-			
 		)
 	}
 }

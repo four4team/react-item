@@ -11,16 +11,19 @@ class Xrelated extends Component {
 		}
 	}
 	componentDidMount() {
-		var self = this;
-		$.ajax({
-			type: 'get',
-			url: 'http://119.23.55.48:8080/ticket?kind=vocal_concert',
-			success:function(data) {
-				data = data.slice(0,3);
-				self.setState({
-					data : data
-				})
+		//拿取相关演出的数据
+		var data = JSON.parse(localStorage.getItem('concertData'));
+		var obj = JSON.parse(localStorage.getItem('info'));
+		var arr = [];
+		data.forEach(function(item){
+			if(item.shortname.slice(0,3) == obj.shortname.slice(0,3)){
+				arr.push(item);
+			}else{
+				return
 			}
+		});
+		this.setState({
+			data: arr
 		})
 	}
 	render() {

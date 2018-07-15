@@ -1,0 +1,80 @@
+.li{
+    width:93%;
+    height:136px;
+    margin-left:13px;
+    margin-right:10px;
+    .img_box{
+        float:left;
+        padding-top:12px;
+        height:125px;
+        .img{
+            width:75px;
+            height:100px;
+        }
+    }
+    .info_box {
+        margin-left:92px;
+        height:136px;
+        padding-top:10px;
+        border-bottom: 1px solid hsla(0,0%,90%,.5);
+        .title{
+        color:#000;
+        height: 20px;
+        font-size:14px;
+        line-height:20px;
+        font-weight: 600;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+        overflow: hidden;
+        }
+        .time_box{
+            white-space:nowrap;
+                text-overflow:ellipsis;
+                overflow: hidden;
+            font-size:10px;
+            color:#999;
+            height: 20px;
+            font-size:12px;
+            line-height:20px;
+            margin-top:9px;
+            .site{
+                margin-left:5px;
+            }
+            .name{
+                margin-left:5px;
+            }
+        }
+        .score_box{
+            font-size:10px;
+            height: 20px;
+            color:#999;
+            .score{
+                color:#ffb02e;
+                margin-left:3px;
+                font-weight:600;
+            }
+        }
+        .price_box{
+            height: 20px;
+            margin-top:10px;
+            .price{
+                font-size: 18px;
+                color: #ff2661;
+                font-weight: 600;
+            }
+            .text{
+                font-size:10px;
+                color:#999;
+                margin-left:3px;
+            }
+        }
+        .campaigns_box{
+            font-size:10px;
+            color:#efaa35;
+            margin-top:6px;
+            .desc{
+                margin-left:4px;
+            }
+        }
+    }
+}
