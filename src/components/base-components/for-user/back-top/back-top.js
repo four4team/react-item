@@ -7,6 +7,7 @@ class Back_top extends Component {
 		this.state = {
 			showback: 'none'
 		}
+		this.handel = this.handel.bind(this)
 	}
 	render(){
 		return (
@@ -17,21 +18,22 @@ class Back_top extends Component {
 	}
 	
 	componentDidMount(){
-		var self = this;
-		window.addEventListener('scroll',function(){
-			
-			if(window.scrollY>600){
-				self.setState({
+		window.addEventListener('scroll',this.handel);
+	}
+	componentWillUnmount(){
+		console.log('你好，已被移除')
+		window.removeEventListener('scroll',this.handel);
+	}
+	handel(){
+		if(window.scrollY>600){
+				this.setState({
 					showback: 'block'
 				})
 			}else{
-				self.setState({
+				this.setState({
 					showback: 'none'
 				})
 			}
-			
-			
-		})
 	}
 	backTop(){
 				window.scrollTo(0,0);

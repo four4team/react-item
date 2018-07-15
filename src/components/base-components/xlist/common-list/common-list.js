@@ -199,15 +199,5 @@ export default connect((state)=>{
 	  }
 })(Common_list)
 
-//	(function(){
-//		var str = JSON.parse(item.events)[0].specification.replace(/[\u4e00-\u9fa5]/g,'');
-//		if(str.indexOf('-')<0){
-//			str = str.slice(0,4)+'.'+str.slice(4,6)+'.'+str.slice(-2,str.length);
-//			return str;
-//		}else{
-//			return str;
-//		}
-//	})()
-
 
 						
