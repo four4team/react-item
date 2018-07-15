@@ -47,7 +47,9 @@ const store = createStore((state = {
 	isShowSearchPop: false,
 	sortText:'',
 	navImgurl:'',
-	navText:''
+	navText:'',
+	isShowGlobalSearch: false,
+	giveValue: ''
 }, action) => {
 	switch(action.type) {
 		case 'notice':
@@ -76,14 +78,22 @@ const store = createStore((state = {
 	   			isShowSearchPop: action.isShowSearchPop
 	   		});
       	case 'sortJustify':
-      	return Object.assign({},state,{
-      		sortText: action.sortText
-      	});
+	      	return Object.assign({},state,{
+	      		sortText: action.sortText
+	      	});
       	case 'sendNavData':
-      	return Object.assign({},state,{
-      		navImgurl: action.navImgurl,
-      		navText:action.navText
-      	});
+	      	return Object.assign({},state,{
+	      		navImgurl: action.navImgurl,
+	      		navText:action.navText
+	      	});
+      	case 'showGlobalSearch':
+      		return Object.assign({},state,{
+      			isShowGlobalSearch: action.isShowGlobalSearch
+      		})
+      	case 'willGiveValue':
+      		return Object.assign({},state,{
+      			giveValue: action.giveValue
+      		})
 		default:
 			return state
 	}

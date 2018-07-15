@@ -13,6 +13,7 @@ import Common_list from '../components/base-components/xlist/common-list/common-
 //为用户
 import Back_top from '../components/base-components/for-user/back-top/back-top' 
 import Xloading from '../components/base-components/for-user/xloading/xloading'
+import Xglobal_search from '../components/base-components/for-user/xglobal-search/xglobal-search'
 
 class Home extends Component {
 	constructor(props){
@@ -37,6 +38,7 @@ class Home extends Component {
 					<Common_list types="guess_like"></Common_list>
 				</div>
 				<Xloading/>
+				<Xglobal_search/>
 			</div>
 		)
 	}

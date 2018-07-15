@@ -1,0 +1,10 @@
+.hot_searches{
+    padding: 15px 0 0 15px;
+    overflow: hidden;box-sizing: border-box;
+    .keyword{
+        margin-right: 13px;margin-bottom: 13px;
+        font-size: 14px;padding: 5px 13px;
+        border: 1px solid #e6e6e6;border-radius: 4px;
+        float: left;color:#262626;box-sizing: border-box;
+    }
+}

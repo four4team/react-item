@@ -25,7 +25,7 @@ class Xperson extends Component {
 			return(
 				<div className={styles.hLogin}>
 					<nav>
-						<a>返回</a>
+						<a onClick={this.back}>返回</a>
 						<p>我的</p>
 					</nav>
 					<div className={styles.loginPage}>
@@ -129,6 +129,9 @@ class Xperson extends Component {
 				</div>
 			)
 		}
+	back(){
+		window.history.go(-1);
+	}
 }
 
 export default Xperson;

@@ -1,0 +1,15 @@
+.record{
+    flex:1;overflow-x: hidden;
+    li{
+        border-bottom: 1px solid #e6e6e6;display: flex;padding:0 10px;
+        justify-content: space-between;align-items: center;height:45px;
+        span{
+            color:#262626;
+        }
+        i{color:#ff5636;}
+    }
+    li:last-child{
+        color:#ff5636;text-align: center;display: block;
+        line-height: 45px;
+    }
+}
