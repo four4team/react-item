@@ -75,7 +75,7 @@ class Xglobal_search extends Component {
 					}else{
 						records.splice(records.indexOf(str),1);
 					}
-					records = records.concat(str);
+					records = records.concat(str).reverse();
 //					records = new Set(records);
 //					records = Array.from(records);
 					localStorage.setItem('searchRecords',JSON.stringify(records));
